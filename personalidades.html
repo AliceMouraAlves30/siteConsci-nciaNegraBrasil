@@ -1,65 +1,76 @@
-<!doctype html>
+<!-- personalidades.html -->
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Consciência Negra — Personalidades</title>
-  <meta name="description" content="Mini-biografias de personalidades negras brasileiras na arte, ciência, política e esporte." />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consciência Negra - Personalidades</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f7f7f7; color:#222; }
+header, footer { background:#111; color:white; padding:20px; text-align:center; }
+nav a { color:#ffd700; margin:0 15px; text-decoration:none; font-size:20px; }
+main { max-width:900px; margin:auto; padding:20px; }
+h1 { text-align:center; font-size:36px; }
+.filter-box { margin:20px 0; text-align:center; }
+select { padding:10px; font-size:18px; border-radius:8px; border:1px solid #ccc; }
+.people-grid { display:grid; grid-template-columns:1fr; gap:20px; }
+.card { background:white; padding:20px; border-radius:12px; box-shadow:0 0 12px rgba(0,0,0,0.12); transition:transform .2s, box-shadow .2s; }
+.card:hover { transform:translateY(-4px); box-shadow:0 4px 18px rgba(0,0,0,0.18); }
+.card img { width:100%; border-radius:10px; margin-bottom:12px; }
+h2 { font-size:28px; margin-top:0; }
+@media (min-width:720px){ .people-grid { grid-template-columns: repeat(3, 1fr); } }
+</style>
 </head>
 <body>
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <h1 class="site-title">Personalidades Negras</h1>
-      <nav class="main-nav" role="navigation" aria-label="Navegação principal">
-        <ul>
-          <li><a href="index.html">História</a></li>
-          <li><a href="personalidades.html" class="active">Personalidades</a></li>
-          <li><a href="desafios.html">Desafios & Ações</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" class="container" role="main">
-    <section class="filter-section" aria-label="Filtrar por área">
-      <label for="area-filter">Filtrar por área:</label>
-      <select id="area-filter" name="area">
-        <option value="all">Todas</option>
-        <option value="arte">Arte</option>
-        <option value="ciencia">Ciência</option>
-        <option value="politica">Política</option>
-        <option value="esporte">Esporte</option>
-      </select>
-    </section>
-
-    <section class="people-grid" aria-live="polite">
-      <article class="person card" data-area="arte" tabindex="0">
-        <img src="assets/images/perso1.jpg" alt="Retrato de artista negra sorrindo" loading="lazy" />
-        <h2>Elza Soares</h2>
-        <p>Cantora, ícone da música brasileira que trouxe narrativas sobre raça e gênero.</p>
-      </article>
-
-      <article class="person card" data-area="ciencia" tabindex="0">
-        <img src="assets/images/perso2.webp" alt="Retrato de cientista negra" loading="lazy" />
-        <h2>Milton Santos</h2>
-        <p>Geógrafo de grande relevância — apesar de não ser negro, aqui use apenas exemplos negros reais; substitua se necessário.</p>
-      </article>
-
-      <article class="person card" data-area="politica" tabindex="0">
-        <img src="assets/images/perso3.jpg" alt="Retrato de personalidade política negra" loading="lazy" />
-        <h2>Marielle Franco</h2>
-        <p>Vereadora, ativista pelos direitos humanos e símbolo da luta contra a violência política.</p>
-      </article>
-    </section>
-  </main>
-
-  <footer role="contentinfo">
-    <div class="container footer-inner">
-      <p>Exemplos de personalidades e suas contribuições. Ver README para referências e créditos.</p>
-    </div>
-  </footer>
-
-  <script src="assets/js/script.js" defer></script>
+<header>
+<h2>Consciência Negra</h2>
+<nav>
+<a href="index.html">Início</a>
+<a href="personalidades.html">Personalidades</a>
+<a href="acoes.html">Ações</a>
+</nav>
+</header>
+<main>
+<h1>Personalidades Negras</h1>
+<div class="filter-box">
+<label for="area-filter">Filtrar por área:</label>
+<select id="area-filter">
+<option value="all">Todas</option>
+<option value="arte">Arte</option>
+<option value="ciencia">Ciência</option>
+<option value="politica">Política</option>
+<option value="esporte">Esporte</option>
+</select>
+</div>
+<section class="people-grid" id="people-grid">
+<div class="card" data-area="arte">
+<img src="assets/images/perso1.jpg" alt="Foto de Elza Soares">
+<h2>Elza Soares</h2>
+<p>Cantora e ícone da música brasileira, símbolo de resistência e representatividade.</p>
+</div>
+<div class="card" data-area="ciencia">
+<img src="assets/images/perso4.jpg" alt="Foto de cientista negra brasileira">
+<h2>Sônia Guimarães</h2>
+<p>Primeira mulher negra doutora em física no Brasil, referência acadêmica e inspiradora.</p>
+</div>
+<div class="card" data-area="politica">
+<img src="assets/images/perso3.jpg" alt="Foto de Marielle Franco">
+<h2>Marielle Franco</h2>
+<p>Vereadora e ativista pelos direitos humanos, símbolo da luta contra a violência política.</p>
+</div>
+</section>
+</main>
+<footer>
+<p>&copy; 2025 - Consciência Negra</p>
+</footer>
+<script>
+const filter = document.getElementById("area-filter");
+const cards = document.querySelectorAll(".card");
+filter.addEventListener("change", () => {
+cards.forEach(card => {
+card.style.display = filter.value === "all" || card.dataset.area === filter.value ? "block" : "none";
+});
+});
+</script>
 </body>
 </html>

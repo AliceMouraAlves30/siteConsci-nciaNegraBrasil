@@ -1,49 +1,73 @@
-<!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
-
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Consciência Negra — Início</title>
-  <meta name="description" content="Site educativo sobre Consciência Negra: história, personalidades e desafios.">
-
-  <meta property="og:title" content="Consciência Negra — Início">
-  <meta property="og:description" content="Aprenda sobre a história, lutas e conquistas da população negra no Brasil.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/images/historia-3.jpg">
-
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Consciência Negra — História e Contexto</title>
+  <meta name="description" content="História da Consciência Negra no Brasil: Zumbi dos Palmares, Lei 10.639/03 e datas relevantes." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta name="theme-color" content="#1b1b1b" />
+  <!-- Open Graph (opcional) -->
+  <meta property="og:title" content="Consciência Negra — História e Contexto" />
+  <meta property="og:description" content="História da Consciência Negra no Brasil e datas importantes." />
 </head>
-
 <body>
-<header>
-  <h1>Consciência Negra</h1>
-  <nav>
-    <a href="index.html" class="active">Início</a>
-    <a href="historia.html">História</a>
-    <a href="personalidades.html">Personalidades</a>
-    <a href="desafios.html">Desafios</a>
-  </nav>
-  <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
-</header>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <h1 class="site-title">Consciência Negra</h1>
+      <nav class="main-nav" role="navigation" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html" class="active">História</a></li>
+          <li><a href="personalidades.html">Personalidades</a></li>
+          <li><a href="desafios.html">Desafios & Ações</a></li>
+        </ul>
+      </nav>
+      <button id="toggle-theme" aria-pressed="false" aria-label="Alternar tema">🌙</button>
+    </div>
+  </header>
 
-<main>
-  <section class="hero">
-    <h2>Reflexão, memória e resistência</h2>
-    <p>
-      A Consciência Negra é um convite para reconhecer a luta, a cultura e a história
-      do povo negro no Brasil. Aqui você encontra conteúdo educativo sobre Zumbi,
-      Palmares, personalidades importantes e desafios atuais.
-    </p>
-    <img src="assets/images/historia-3.jpg" alt="Celebração da cultura negra" loading="lazy">
-  </section>
-</main>
+  <main id="main" class="container" role="main">
+    <article class="hero" aria-labelledby="hero-title">
+      <h2 id="hero-title">História e Contexto</h2>
+      <p class="lede">Uma introdução à resistência negra no Brasil, desde Quilombos como Palmares até a Lei 10.639/03 e celebrações contemporâneas.</p>
+      <section class="cards" aria-label="Principais eventos históricos">
+        <article class="card" tabindex="0">
+          <img src="assets/images/historia1.jpg" alt="Estátua de Zumbi dos Palmares" loading="lazy" />
+          <h3>Zumbi dos Palmares</h3>
+          <p>Líder quilombola símbolo da resistência ao sistema escravista no Brasil.</p>
+        </article>
 
-<footer>
-  <p>© 2025 — Consciência Negra | Projeto educativo</p>
-</footer>
+        <article class="card" tabindex="0">
+          <img src="assets/images/historia2.webp" alt="Representação de um Quilombo" loading="lazy" />
+          <h3>Quilombos</h3>
+          <p>Comunidades de resistência formadas por escravizados fugidos e aliados.</p>
+        </article>
 
+        <article class="card" tabindex="0">
+          <img src="assets/images/historia3.jpg" alt="Leitura de texto sobre a Lei 10.639" loading="lazy" />
+          <h3>Lei 10.639/03</h3>
+          <p>Lei que incluiu a História e Cultura Afro-Brasileira no currículo escolar oficial.</p>
+        </article>
+      </section>
+
+      <section class="timeline" aria-label="Linha do tempo">
+        <h4>Linha do tempo (resumo)</h4>
+        <ul>
+          <li><strong>1695:</strong> Resistência do Quilombo dos Palmares</li>
+          <li><strong>1888:</strong> Abolição da escravidão</li>
+          <li><strong>2003:</strong> Lei 10.639/03</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <p>Projeto educativo sobre Consciência Negra — Imagens com licença livre. <a href="README.md">Leia o README</a></p>
+      <small>Créditos: imagens: Unsplash / Wikimedia (ver README).</small>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js" defer></script>
 </body>
 </html>

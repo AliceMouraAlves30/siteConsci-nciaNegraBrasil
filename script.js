@@ -1,24 +1,56 @@
-// Tema claro/escuro
-const toggle = document.getElementById("theme-toggle");
-toggle.addEventListener("click", () => {
-  const html = document.documentElement;
-  html.dataset.theme = html.dataset.theme === "light" ? "dark" : "light";
-});
+// Acessibilidade e interatividade leves:
+// - Filtro de personalidades
+// - Toggle tema (claro/escuro) acessível
 
-// Filtro de personalidades
-const select = document.getElementById("area");
-const cards = document.querySelectorAll(".card");
+document.addEventListener('DOMContentLoaded', function () {
+  // Theme toggle
+  const toggle = document.getElementById('toggle-theme');
+  if (toggle) {
+    // Leitura do prefer (localStorage)
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
+    updateToggleAria();
 
-if (select) {
-  select.addEventListener("change", () => {
-    const area = select.value;
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+      updateToggleAria();
+    });
+  }
 
-    cards.forEach(card => {
-      if (area === "todas" || card.dataset.area === area) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
+  function updateToggleAria(){
+    if (!toggle) return;
+    const pressed = document.body.classList.contains('dark');
+    toggle.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+    toggle.textContent = pressed ? '☀️' : '🌙';
+  }
+
+  // Filtro de personalidades
+  const filter = document.getElementById('area-filter');
+  if (filter) {
+    filter.addEventListener('change', () => {
+      const value = filter.value;
+      const items = document.querySelectorAll('.person');
+      items.forEach(item => {
+        const area = item.getAttribute('data-area') || '';
+        if (value === 'all' || area === value) {
+          item.style.display = '';
+          item.setAttribute('aria-hidden', 'false');
+        } else {
+          item.style.display = 'none';
+          item.setAttribute('aria-hidden', 'true');
+        }
+      });
+    });
+  }
+
+  // Pequena melhoria de foco: permitir 'enter' ativar cards (simula link)
+  document.querySelectorAll('.card[tabindex]').forEach(card => {
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        // Se quiser inserir link, altere para window.location = '...';
+        card.classList.add('key-activated');
+        setTimeout(()=> card.classList.remove('key-activated'),400);
       }
     });
   });
-}
+});

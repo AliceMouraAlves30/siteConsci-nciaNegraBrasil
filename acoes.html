@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ações e Desafios</title>
+<title>Consciência Negra - Ações e Desafios</title>
 <style>
 body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f7f7f7; color:#222; }
 header, footer { background:#111; color:white; padding:20px; text-align:center; }
 nav a { color:#ffd700; margin:0 15px; text-decoration:none; font-size:20px; }
 main { max-width:900px; margin:auto; padding:20px; }
 h1 { text-align:center; font-size:36px; }
-section { margin-bottom:30px; }
-.card { background:white; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1); margin-bottom:20px; }
-h2 { font-size:28px; }
+.card-grid { display:flex; flex-direction:column; gap:20px; }
+.card { background:white; padding:20px; border-radius:12px; box-shadow:0 0 12px rgba(0,0,0,0.12); transition:transform .2s, box-shadow .2s; }
+.card:hover { transform:translateY(-4px); box-shadow:0 4px 18px rgba(0,0,0,0.18); }
+h2 { font-size:28px; margin-top:0; }
 </style>
 </head>
 <body>
@@ -25,19 +26,19 @@ h2 { font-size:28px; }
 </nav>
 </header>
 <main>
-<h1>Ações e Desafios</h1>
-<section>
+<h1>Desafios e Ações</h1>
+<section class="card-grid">
 <div class="card">
 <h2>Racismo Estrutural</h2>
 <p>O racismo estrutural afeta acesso à educação, renda, moradia e oportunidades. A conscientização e o combate às desigualdades são fundamentais.</p>
 </div>
 <div class="card">
 <h2>Políticas Públicas</h2>
-<p>Programas de inclusão, como cotas raciais e incentivo a empreendedores negros, são essenciais para redução das desigualdades.</p>
+<p>Programas de inclusão, como cotas raciais e incentivo a empreendedores negros, ajudam a reduzir desigualdades geradas historicamente.</p>
 </div>
 <div class="card">
 <h2>Organizações e Movimentos</h2>
-<p>Coletivos como UNEafro, Educafro e MNU atuam na luta por direitos, educação e representatividade.</p>
+<p>Coletivos como UNEafro, Educafro e MNU atuam na luta por direitos, educação, inclusão e representatividade.</p>
 </div>
 </section>
 </main>

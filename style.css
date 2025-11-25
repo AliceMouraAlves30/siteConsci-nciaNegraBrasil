@@ -1,80 +1,59 @@
-:root {
-  --bg-light: #ffffff;
-  --text-light: #222;
-  --bg-dark: #1a1a1a;
-  --text-dark: #f5f5f5;
-  --accent: #b3006b;
+/* Reset simples */
+* { box-sizing: border-box; }
+html,body { margin:0; padding:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#111; background:#fafafa; }
+
+/* Container */
+.container { max-width:1100px; margin:0 auto; padding:1rem; }
+
+/* Header */
+.site-header { background: linear-gradient(180deg,#111 0%, #222 100%); color:#fff; position:sticky; top:0; z-index:10; }
+.header-inner { display:flex; gap:1rem; align-items:center; justify-content:space-between; padding:0.75rem 1rem; }
+.site-title { font-size:1.25rem; margin:0; }
+.main-nav ul { list-style:none; margin:0; padding:0; display:flex; gap:0.5rem; align-items:center; }
+.main-nav a { color:#ddd; text-decoration:none; padding:0.5rem; border-radius:6px; transition: background .18s, transform .12s; }
+.main-nav a:hover, .main-nav a:focus { background: rgba(255,255,255,0.06); outline: none; transform: translateY(-2px); }
+.main-nav a.active { background: rgba(255,255,255,0.12); color:#fff; }
+
+/* Focus visible */
+:focus { outline: 3px solid #ffcc00; outline-offset: 2px; }
+
+/* Hero & Cards */
+.hero { padding:1.25rem 0; }
+.lede { color:#333; margin-top:0.25rem; }
+.cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:1rem; margin-top:1rem; }
+.card { background:#fff; border-radius:12px; padding:0.75rem; box-shadow: 0 6px 16px rgba(12,12,12,0.06); transition: transform .25s ease, box-shadow .25s ease; }
+.card img { width:100%; height:160px; object-fit:cover; border-radius:8px; display:block; }
+.card h3 { margin:0.5rem 0 0.25rem; }
+.card p { margin:0; color:#444; font-size:0.95rem; }
+
+/* Hover micro-animation on cards */
+.card:hover, .card:focus { transform: translateY(-6px) scale(1.01); box-shadow: 0 12px 30px rgba(12,12,12,0.12); }
+
+/* Timeline */
+.timeline ul { margin:0.5rem 0 0; padding-left:1rem; }
+
+/* People grid */
+.people-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-top:1rem; }
+.person img { height:200px; object-fit:cover; border-radius:8px; }
+
+/* Footer */
+footer { background:#111; color:#fff; padding:1rem 0; margin-top:2rem; }
+.footer-inner { display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+
+/* Filter */
+.filter-section { display:flex; gap:0.5rem; align-items:center; margin-top:1rem; }
+
+/* Buttons, toggles */
+#toggle-theme { background:transparent; border:1px solid rgba(255,255,255,0.12); color:#fff; padding:0.4rem 0.6rem; border-radius:8px; cursor:pointer; }
+
+/* Responsive: mobile breakpoint <= 480px */
+@media (max-width:480px) {
+  .header-inner { flex-direction:column; align-items:flex-start; gap:0.5rem; }
+  .card img { height:140px; }
+  .person img { height:160px; }
 }
 
-[data-theme="light"] {
-  --bg: var(--bg-light);
-  --text: var(--text-light);
-}
-[data-theme="dark"] {
-  --bg: var(--bg-dark);
-  --text: var(--text-dark);
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.3s, color 0.3s;
-}
-
-header {
-  background: var(--accent);
-  color: #fff;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: bold;
-}
-nav a.active {
-  text-decoration: underline;
-}
-
-main {
-  padding: 1.5rem;
-}
-
-img {
-  width: 100%;
-  border-radius: 8px;
-  margin: 10px 0;
-}
-
-.cards {
-  display: grid;
-  gap: 1rem;
-}
-
-.card {
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  transition: transform 0.2s;
-}
-.card:hover {
-  transform: scale(1.03);
-}
-
-@media (min-width: 600px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 900px) {
-  .cards {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+/* Dark theme (JS toggles body.dark) */
+body.dark { background:#0f0f10; color:#ddd; }
+body.dark .site-header { background: linear-gradient(180deg,#0a0a0a 0%, #111 100%); }
+body.dark .card { background:#101010; box-shadow: 0 8px 20px rgba(0,0,0,0.6); color:#ddd; }

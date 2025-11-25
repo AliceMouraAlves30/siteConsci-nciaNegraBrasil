@@ -1,57 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consciência Negra — História</title>
-    <meta name="description" content="História e contexto da Consciência Negra no Brasil, Zumbi dos Palmares e Lei 10.639.">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <title>Consciência Negra — Início</title>
+  <meta name="description" content="Site educativo sobre a Consciência Negra no Brasil. História, personalidades e desafios sociais.">
+
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Consciência Negra — História, Personalidades e Ação">
+  <meta property="og:description" content="Site educativo sobre Consciência Negra.">
+  <meta property="og:image" content="assets/images/historia-1.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body>
 <header>
-    <nav class="navbar">
-        <h1 class="logo">Consciência Negra</h1>
-        <button id="menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
-        <ul id="menu">
-            <li><a href="index.html" class="active">História</a></li>
-            <li><a href="personalidades.html">Personalidades</a></li>
-            <li><a href="acoes.html">Ações e Desafios</a></li>
-        </ul>
-    </nav>
+  <h1>Consciência Negra</h1>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="historia.html">História</a>
+    <a href="personalidades.html">Personalidades</a>
+    <a href="desafios.html">Desafios</a>
+  </nav>
+
+  <button id="theme-toggle" aria-label="Alterar tema">🌙</button>
 </header>
 
 <main>
-    <section class="hero">
-        <h2>História e Contexto</h2>
-        <p>A Consciência Negra reforça a valorização da identidade, cultura e luta da população negra no Brasil.</p>
-    </section>
+  <section class="hero">
+    <h2>Reflexão, História e Luta</h2>
+    <p>Conheça a importância da Consciência Negra no Brasil e no mundo.</p>
+  </section>
 
-    <section class="content">
-        <article>
-            <h3>Zumbi dos Palmares</h3>
-            <p>Zumbi foi líder do Quilombo dos Palmares e símbolo da resistência negra à escravidão.</p>
-            <img src="assets/images/historia-1.jpg" alt="Retrato ilustrativo de Zumbi dos Palmares" loading="lazy">
-        </article>
+  <section class="cards">
+    <article class="card">
+      <img src="assets/images/historia-1.jpg" alt="Representação histórica">
+      <h3>História</h3>
+      <p>A origem das lutas e conquistas do povo negro no Brasil.</p>
+      <a href="historia.html" class="btn">Ler mais</a>
+    </article>
 
-        <article>
-            <h3>Lei 10.639/03</h3>
-            <p>Em 2003, tornou-se obrigatório o ensino da História e Cultura Afro-brasileira nas escolas.</p>
-            <img src="assets/images/historia-2.jpg" alt="Professora ensinando história afro-brasileira em sala de aula" loading="lazy">
-        </article>
+    <article class="card">
+      <img src="assets/images/personalidade-1.jpg" alt="Personalidade negra importante">
+      <h3>Personalidades</h3>
+      <p>Artistas, cientistas, políticos e atletas que marcaram a história.</p>
+      <a href="personalidades.html" class="btn">Explorar</a>
+    </article>
 
-        <article>
-            <h3>Identidade e Cultura</h3>
-            <p>A data de 20 de novembro celebra a resistência e a contribuição da população negra.</p>
-            <img src="assets/images/historia-3.jpg" alt="Grupo celebrando cultura afro-brasileira" loading="lazy">
-        </article>
-    </section>
+    <article class="card">
+      <img src="assets/images/desafios-1.jpg" alt="Desafios sociais">
+      <h3>Desafios</h3>
+      <p>Discussão sobre racismo estrutural, políticas públicas e ações.</p>
+      <a href="desafios.html" class="btn">Entender</a>
+    </article>
+  </section>
 </main>
 
 <footer>
-    <p>© 2025 — Consciência Negra | Projeto Educacional</p>
+  <p>© 2025 — Consciência Negra | Projeto educativo</p>
 </footer>
-
-<script src="script.js"></script>
 </body>
 </html>

@@ -1,118 +1,219 @@
+/* =======================
+   TEMA CLARO/ESCURO
+======================= */
+:root {
+  --bg: #ffffff;
+  --text: #222;
+  --card: #f3f3f3;
+  --accent: #000000;
+  --shadow: rgba(0, 0, 0, .1);
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #f1f1f1;
+  --card: #1e1e1e;
+  --accent: #ffffff;
+  --shadow: rgba(255, 255, 255, .08);
+}
+
+/* =======================
+   RESET BÁSICO
+======================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: #fff;
-    color: #222;
-    line-height: 1.6;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background .3s, color .3s;
 }
 
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background: #111;
-    color: white;
+/* =======================
+   HEADER + NAV
+======================= */
+header {
+  padding: 20px;
+  background: var(--card);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px var(--shadow);
 }
 
-.navbar .logo {
-    font-size: 1.3rem;
+header h1 {
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
-.navbar ul {
-    display: flex;
-    gap: 15px;
-    list-style: none;
+nav a {
+  margin-left: 20px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: .3s ease;
 }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+nav a:hover,
+nav a.active {
+  color: var(--accent);
 }
 
-.navbar a:hover {
-    color: #f2c400;
+nav a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  transition: .3s;
 }
 
-#menu-btn {
-    display: none;
-    font-size: 1.6rem;
-    background: none;
-    border: none;
-    color: white;
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
 }
 
-/* Hero */
+/* Toggle */
+#theme-toggle {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+#theme-toggle:hover {
+  opacity: 0.8;
+}
+
+/* =======================
+   HERO
+======================= */
 .hero {
-    padding: 40px 20px;
-    text-align: center;
-    background: #f7f7f7;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-/* Content */
-.content, .cards {
-    padding: 20px;
-    max-width: 1000px;
-    margin: auto;
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-.content img, .card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 10px;
-}
-
-/* Cards */
+/* =======================
+   CARDS
+======================= */
 .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 40px;
 }
 
 .card {
-    background: #fafafa;
-    padding: 15px;
-    border-radius: 10px;
-    transition: transform .3s, box-shadow .3s;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: transform .3s ease, box-shadow .3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px #ccc;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px var(--shadow);
 }
 
-/* Footer */
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin-top: 10px;
+}
+
+/* Botão */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: var(--accent);
+  color: var(--bg);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: .3s;
+}
+
+.btn:hover {
+  opacity: .8;
+}
+
+/* =======================
+   SEÇÕES COM TEXTO
+======================= */
+.content {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.content img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+/* =======================
+   FOOTER
+======================= */
 footer {
-    text-align: center;
-    padding: 15px;
-    background: #111;
-    color: white;
-    margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+  background: var(--card);
+  margin-top: 40px;
 }
 
-/* Mobile */
+/* =======================
+   FILTRO (SELECT)
+======================= */
+.filtro {
+  text-align: center;
+  padding: 20px;
+}
+
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid var(--text);
+  background: var(--card);
+  color: var(--text);
+}
+
+/* =======================
+   RESPONSIVIDADE
+======================= */
 @media (max-width: 480px) {
+  nav a {
+    margin-left: 10px;
+  }
 
-    #menu-btn {
-        display: block;
-    }
+  .cards {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
 
-    #menu {
-        display: none;
-        flex-direction: column;
-        background: #111;
-        padding: 10px;
-    }
-
-    #menu.show {
-        display: flex;
-    }
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

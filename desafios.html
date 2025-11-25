@@ -1,48 +1,67 @@
-<!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
-
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Consciência Negra — Desafios</title>
-  <meta name="description" content="Desafios enfrentados pela população negra e ações possíveis.">
-
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Consciência Negra — Desafios e Ações</title>
+  <meta name="description" content="Desafios do racismo estrutural no Brasil e ações, políticas públicas e organizações que atuam no tema." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-
 <body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <h1 class="site-title">Desafios e Ações</h1>
+      <nav class="main-nav" role="navigation" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">História</a></li>
+          <li><a href="personalidades.html">Personalidades</a></li>
+          <li><a href="desafios.html" class="active">Desafios & Ações</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<header>
-  <h1>Desafios e Ações</h1>
-  <nav>
-    <a href="index.html">Início</a>
-    <a href="historia.html">História</a>
-    <a href="personalidades.html">Personalidades</a>
-    <a href="desafios.html" class="active">Desafios</a>
-  </nav>
-  <button id="theme-toggle" aria-label="Alterar tema">🌙</button>
-</header>
+  <main id="main" class="container" role="main">
+    <section class="calls-to-action" aria-labelledby="cta-title">
+      <h2 id="cta-title">Como apoiar e agir</h2>
+      <p>Recursos, organizações e ações educativas que você pode apoiar ou replicar.</p>
 
-<main>
-  <section class="content">
-    <img src="assets/images/desafios-1.jpg" alt="Desigualdade social" loading="lazy">
+      <div class="cards">
+        <article class="card" tabindex="0">
+          <img src="assets/images/desafios1.jpg" alt="Pessoas em encontro comunitário" loading="lazy" />
+          <h3>Organizações</h3>
+          <p>Listas de ONGs e coletivos que atuam na promoção da igualdade racial.</p>
+        </article>
 
-    <h2>Racismo Estrutural</h2>
-    <p>O racismo estrutural é uma realidade que...</p>
+        <article class="card" tabindex="0">
+          <img src="assets/images/desafios2.webp" alt="Protesto por igualdade" loading="lazy" />
+          <h3>Políticas Públicas</h3>
+          <p>Como avaliar e cobrar políticas públicas de inclusão e reparação.</p>
+        </article>
 
-    <h2>Organizações e Políticas Públicas</h2>
-    <p>Diversas organizações atuam no combate ao racismo...</p>
+        <article class="card" tabindex="0">
+          <img src="assets/images/desafios3.jpg" alt="Material educativo e livros" loading="lazy" />
+          <h3>Educação</h3>
+          <p>Materiais educativos para uso em escolas e comunidades.</p>
+        </article>
+      </div>
 
-    <h2>Ações Educativas</h2>
-    <p>A educação é um dos principais caminhos para transformar...</p>
-  </section>
-</main>
+      <section class="resources" aria-label="Recursos e referências">
+        <h4>Recursos úteis</h4>
+        <ul>
+          <li><a href="https://www.gov.br" target="_blank" rel="noopener">Documentos e legislações (ex: Lei 10.639)</a></li>
+          <li><a href="https://pt.wikipedia.org/wiki/Zumbi_dos_Palmares" target="_blank" rel="noopener">Zumbi dos Palmares (Wikimedia)</a></li>
+        </ul>
+      </section>
+    </section>
+  </main>
 
-<footer>
-  <p>© 2025 — Consciência Negra | Projeto educativo</p>
-</footer>
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <p>Faça parte da transformação: educação, cobrança e engajamento comunitário.</p>
+    </div>
+  </footer>
 
+  <script src="assets/js/script.js" defer></script>
 </body>
 </html>

@@ -1,86 +1,65 @@
-<!DOCTYPE html>
-<html lang="pt-BR" data-theme="light">
-
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Consciência Negra — Personalidades</title>
-  <meta name="description" content="Personalidades negras que marcaram a história no Brasil e no mundo.">
-
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <meta name="description" content="Mini-biografias de personalidades negras brasileiras na arte, ciência, política e esporte." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-
 <body>
-<header>
-  <h1>Personalidades</h1>
-  <nav>
-    <a href="index.html">Início</a>
-    <a href="historia.html">História</a>
-    <a href="personalidades.html" class="active">Personalidades</a>
-    <a href="desafios.html">Desafios</a>
-  </nav>
-  <button id="theme-toggle" aria-label="Alterar tema">🌙</button>
-</header>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <h1 class="site-title">Personalidades Negras</h1>
+      <nav class="main-nav" role="navigation" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">História</a></li>
+          <li><a href="personalidades.html" class="active">Personalidades</a></li>
+          <li><a href="desafios.html">Desafios & Ações</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<main>
+  <main id="main" class="container" role="main">
+    <section class="filter-section" aria-label="Filtrar por área">
+      <label for="area-filter">Filtrar por área:</label>
+      <select id="area-filter" name="area">
+        <option value="all">Todas</option>
+        <option value="arte">Arte</option>
+        <option value="ciencia">Ciência</option>
+        <option value="politica">Política</option>
+        <option value="esporte">Esporte</option>
+      </select>
+    </section>
 
-  <section class="filtro">
-    <label for="area">Filtrar por área:</label>
-    <select id="area">
-      <option value="todas">Todas</option>
-      <option value="arte">Arte</option>
-      <option value="ciencia">Ciência</option>
-      <option value="politica">Política</option>
-      <option value="esporte">Esporte</option>
-    </select>
-  </section>
+    <section class="people-grid" aria-live="polite">
+      <article class="person card" data-area="arte" tabindex="0">
+        <img src="assets/images/perso1.jpg" alt="Retrato de artista negra sorrindo" loading="lazy" />
+        <h2>Elza Soares</h2>
+        <p>Cantora, ícone da música brasileira que trouxe narrativas sobre raça e gênero.</p>
+      </article>
 
-  <section id="cards-personalidades" class="cards">
+      <article class="person card" data-area="ciencia" tabindex="0">
+        <img src="assets/images/perso2.webp" alt="Retrato de cientista negra" loading="lazy" />
+        <h2>Milton Santos</h2>
+        <p>Geógrafo de grande relevância — apesar de não ser negro, aqui use apenas exemplos negros reais; substitua se necessário.</p>
+      </article>
 
-    <article class="card" data-area="arte">
-      <img src="assets/images/personalidade-1.jpg" alt="Elza Soares sorrindo" loading="lazy">
-      <h3>Elza Soares — Arte</h3>
-      <p>
-        Uma das maiores vozes do Brasil, Elza foi símbolo de resistência,
-        potência artística e luta contra o racismo e a violência de gênero.
-      </p>
-    </article>
+      <article class="person card" data-area="politica" tabindex="0">
+        <img src="assets/images/perso3.jpg" alt="Retrato de personalidade política negra" loading="lazy" />
+        <h2>Marielle Franco</h2>
+        <p>Vereadora, ativista pelos direitos humanos e símbolo da luta contra a violência política.</p>
+      </article>
+    </section>
+  </main>
 
-    <article class="card" data-area="ciencia">
-      <img src="assets/images/personalidade-2.jpg" alt="Dra. Jaqueline Goes de Jesus" loading="lazy">
-      <h3>Jaqueline Goes — Ciência</h3>
-      <p>
-        Biomédica responsável por liderar a equipe que sequenciou o
-        genoma do coronavírus em apenas 48 horas, referência mundial na ciência.
-      </p>
-    </article>
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <p>Exemplos de personalidades e suas contribuições. Ver README para referências e créditos.</p>
+    </div>
+  </footer>
 
-    <article class="card" data-area="politica">
-      <img src="assets/images/personalidade-3.jpg" alt="Marielle Franco discursando" loading="lazy">
-      <h3>Marielle Franco — Política</h3>
-      <p>
-        Socióloga, ativista e vereadora do Rio, defendia direitos humanos,
-        mulheres negras e moradores de favela. Tornou-se símbolo global de luta.
-      </p>
-    </article>
-
-    <article class="card" data-area="esporte">
-      <img src="assets/images/personalidade-4.jpg" alt="Pelé comemorando gol" loading="lazy">
-      <h3>Pelé — Esporte</h3>
-      <p>
-        Considerado o maior jogador de futebol de todos os tempos,
-        Pelé levou o nome do Brasil ao mundo e é referência mundial no esporte.
-      </p>
-    </article>
-
-  </section>
-</main>
-
-<footer>
-  <p>© 2025 — Consciência Negra | Projeto educativo</p>
-</footer>
-
+  <script src="assets/js/script.js" defer></script>
 </body>
 </html>
